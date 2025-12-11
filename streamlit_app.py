@@ -1,8 +1,8 @@
 import streamlit as st
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solusi SPNL - Newton Raphson</title>
+import numpy as np
 
+st.set_page_config(page_title="Solusi SPNL - Newton Raphson")
+
+st.title("🔢 Solusi SPNL dengan Metode Newton–Raphson")
+
+st.write("Masukkan fungsi dan parameter perhitungan:")
