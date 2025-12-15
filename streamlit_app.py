@@ -15,3 +15,9 @@ y0 = st.number_input("Tebakan Awal y₀:", value=1.0)
 iter_max = st.number_input("Jumlah Iterasi Maksimum:", value=20)
 eps = st.number_input("Toleransi Error (ε):", value=0.0001, format="%.6f")
 tombol = st.button("Hitung Newton-Raphson")
+
+def f1(x, y):
+    return eval(f1_input {"x": x, "y": y, "np": np})
+
+def f2(x, y):
+    return eval(f2_input, {"x": x, "y": y, "np": np})
