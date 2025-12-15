@@ -17,7 +17,7 @@ eps = st.number_input("Toleransi Error (ε):", value=0.0001, format="%.6f")
 tombol = st.button("Hitung Newton-Raphson")
 
 def f1(x, y):
-    return eval(f1_input {"x": x, "y": y, "np": np})
+    return eval(f1_input, {"x": x, "y": y, "np": np})
 
 def f2(x, y):
     return eval(f2_input, {"x": x, "y": y, "np": np})
