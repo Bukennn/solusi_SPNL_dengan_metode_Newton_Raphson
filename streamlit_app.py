@@ -31,9 +31,8 @@ def jacobian(x, y):
     return np.array([[df1_dx, df1_dy],
                      [df2_dx, df2_dy]])
 
-hasil_iterasi = []
-
 if tombol:
+    hasil_iterasi = []
     x, y = x0, y0
   
     for i in range(int(iter_max)):
