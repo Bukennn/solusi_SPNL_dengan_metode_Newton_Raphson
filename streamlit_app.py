@@ -65,7 +65,7 @@ if tombol:
         - x = `{x}`
         - y = `{y}`
         - Error terakhir = `{error}'
-        - Iterasi = `{len(hasil_iterasi}`
+        - Iterasi = `{len(hasil_iterasi)}`
         """)
 
         st.subheader("📊 Tabel Iterasi")
