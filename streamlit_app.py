@@ -28,5 +28,5 @@ def jacobian(x, y):
     df1_dy = (f1(x, y + h) - f1(x, y)) / h
     df2_dx = (f2(x + h, y) - f2(x, y)) / h
     df2_dy = (f2(x, y + h) - f2(x, y)) / h
-    return np.array([df1_dx, df1_dy],
+    return np.array([[df1_dx, df1_dy],
                      [df2_dx, df2_dy]])
