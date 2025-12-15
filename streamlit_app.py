@@ -33,6 +33,7 @@ def jacobian(x, y):
 
 if tombol:
     x, y = x0, y0
+     hasil_iterasi = []
 
     for i in range(int(iter_max)):
 
