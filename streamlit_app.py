@@ -31,8 +31,11 @@ def jacobian(x, y):
     return np.array([[df1_dx, df1_dy],
                      [df2_dx, df2_dy]])
 
+hasil_iterasi = []
+
 if tombol:
     x, y = x0, y0
+  
     for i in range(int(iter_max)):
 
         J = jacobian(x, y)
@@ -55,5 +58,20 @@ if tombol:
 
         if error < eps:
             break
+  with col2:
+        st.subheader("📌 Hasil Perhitungan")
 
+        st.success(f"""
+        **Solusi Akhir Ditemukan:**
+        - x = `{x}`
+        - y = `{y}`
+        - Error terakhir = `{error}`
+        - Iterasi = `{len(hasil_iterasi)}`
+        """)
+
+        st.subheader("📊 Tabel Iterasi")
+
+        import pandas as pd
+        df = pd.DataFrame(hasil_iterasi, columns=["Iterasi", "x", "y", "Error"])
+        st.dataframe(df, use_container_width=True)
 
