@@ -30,3 +30,46 @@ def jacobian(x, y):
     df2_dy = (f2(x, y + h) - f2(x, y)) / h
     return np.array([[df1_dx, df1_dy],
                      [df2_dx, df2_dy]])
+
+if tombol:
+    x, y = x0, y0
+
+    for i in range(int(iter_max)):
+
+        J = jacobian(x, y)
+        F = np.array([f1(x, y), f2(x, y)])
+
+        try:
+            delta = np.linalg.solve(J, -F)
+        except np.linalg.LinAlgError:
+            st.error("Jacobian singular. Tidak bisa melanjutkan iterasi.")
+            break
+
+        x_new = x + delta[0]
+        y_new = y + delta[1]
+
+        error = np.sqrt((x_new - x)**2 + (y_new - y)**2)
+
+        hasil_iterasi.append([i + 1, x_new, y_new, error])
+
+        x, y = x_new, y_new
+
+        if error < eps:
+            break
+
+ with col2:
+        st.subheader("📌 Hasil Perhitungan")
+
+        st.success(f"""
+        **Solusi Akhir Ditemukan:**
+        - x = `{x}`
+        - y = `{y}`
+        - Error terakhir = `{error}
+        - Iterasi = `{len(hasil_iterasi}`
+        """)
+
+        st.subheader("📊 Tabel Iterasi")
+
+        import pandas as pd
+        df = pd.DataFrame(hasil_iterasi, columns=["Iterasi", "x", "y", "Error"])
+        st.dataframe(df, use_container_width=True)
