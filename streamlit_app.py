@@ -58,8 +58,8 @@ if tombol:
 
         if error < eps:
             break
-  with col2:
-      st.subheader("📌 Hasil Perhitungan")
+    with col2:
+        st.subheader("📌 Hasil Perhitungan")
 
         st.success(f"""
         **Solusi Akhir Ditemukan:**
