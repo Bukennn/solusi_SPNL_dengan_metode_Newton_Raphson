@@ -21,3 +21,12 @@ def f1(x, y):
 
 def f2(x, y):
     return eval(f2_input, {"x": x, "y": y, "np": np})
+
+def jacobian(x, y):
+    h = 1e-5
+    df1_dx = (f1(x + h, y) - f1(x, y)) / h
+    df1_dy = (f1(x, y + h) - f1(x, y)) / h
+    df2_dx = (f2(x + h, y) - f2(x, y)) / h
+    df2_dy = (f2(x, y + h) - f2(x, y)) / h
+    return np.array([df1_dx, df1_dy],
+                     [df2_dx, df2_dy]])
