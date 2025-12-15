@@ -64,7 +64,7 @@ if tombol:
         **Solusi Akhir Ditemukan:**
         - x = `{x}`
         - y = `{y}`
-        - Error terakhir = `{error}
+        - Error terakhir = `{error}'
         - Iterasi = `{len(hasil_iterasi}`
         """)
 
